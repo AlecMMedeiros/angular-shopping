@@ -1,0 +1,91 @@
+.main-header {    
+  padding: 10px 0px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 40px;
+}
+
+.main-header__title {   
+  display: flex; 
+  font-size: 80px;
+  gap: 5%;      
+}
+
+.main-header__title--blue {
+  color: #023047;
+  font-size:60px;
+
+}
+
+.main-header__title--orange {
+  color:  #FFB703;;
+  font-size:60px;
+}
+
+.main-header__menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header__menu ul {
+  display: flex;
+  margin: 2rem; 
+}
+
+.main-header__menu a {
+  padding: 10px 10px;
+  color: #219EBC;
+  font-weight: 400;
+  font-size: 22px;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+}
+
+.main-header__menu a:hover {
+  background-color: #FB8500;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.container-menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  flex: 1;
+}
+
+.badge-carrinho {
+  background-color: #023047;
+  padding: 5px 10px;    
+  border-radius: 4px;
+  color: white;
+}
+
+.search-form{
+  height: 44px;
+  display: flex;
+}
+
+.search-form input{
+  box-sizing: border-box;
+  height: 56px;
+  padding: 28px;
+  flex:1;
+  background-color: gray;
+  color: white;
+  border: none;
+  transition: all -3s ease-in-out;
+  font-size: 22px;
+}
+
+.search-form button{
+ text-align: center;
+  width: 56px;
+  height: 56px;
+  background-color:  #FB8500;
+  border:none;
+  color: #fff;
+  font-size: 22px;
+}
