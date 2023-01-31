@@ -17,7 +17,7 @@
   background-color: white;    
   font-weight: bold;
   padding: 20px;
-  color: var(--gray);
+  color: gray;
 }
 
 .footer__title {
