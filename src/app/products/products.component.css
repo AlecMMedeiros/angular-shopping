@@ -44,6 +44,12 @@
   color: #219EBC;
 }
 
+.product-item__price-description {
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .product-item__price {
   color: #FB8500;
   font-size: 32px;

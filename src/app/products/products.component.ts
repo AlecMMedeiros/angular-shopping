@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct, products } from '../database/produtos';
 import { ProductsService } from '../products.service';
+import IProduct from '../interface/IProduct.interface';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -10,9 +11,21 @@ import { ProductsService } from '../products.service';
 export class ProductsComponent implements OnInit {
 public products!: IProduct[];
 
-  constructor(private productService: ProductsService) {}
+  constructor(
+    private productService: ProductsService,
+    private route: ActivatedRoute
+    ) {}
 
   ngOnInit(): void {
-    this.products = this.productService.getAll();
+    const products = this.productService.getAll();
+    this.route.queryParamMap.subscribe((params) => {
+      const description = params.get('description')?.toLowerCase();
+
+      if(description) {
+        this.products = products.filter((elem) => elem.description.toLowerCase().includes(description));
+        return;
+      }
+      this.products = products;
+    })
   }
 }

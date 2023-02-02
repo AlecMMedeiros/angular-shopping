@@ -1,0 +1,87 @@
+<h2 class="contact__title">Contact Us</h2>
+<section class="contact__container">
+  <form class="contact-form" [formGroup]="formContact" (ngSubmit)="sendForm()">
+    <input
+      type="text"
+      placeholder="Enter Your Name"
+      formControlName="name"
+      [class.valid]="formContact.controls['name'].valid"
+      [class.invalid]="formContact.controls['name'].invalid && (formContact.controls['name'].touched || formContact.controls['name'].dirty)"
+     
+    />
+    <div *ngIf="formContact.controls['name'].invalid && (formContact.controls['name'].touched || formContact.controls['name'].dirty)">
+      
+      <small class="error-message" *ngIf="formContact.controls['name'].hasError('minlength')">You must enter at least 4 characters.</small>
+      <small class="error-message" *ngIf="formContact.controls['name'].hasError('required')">Name is a required field. </small>
+
+
+    </div>
+    <input
+     type="text"
+      placeholder="Subject"
+      formControlName="subject"
+      [class.valid]="formContact.controls['subject'].valid"
+      [class.invalid]="formContact.controls['subject'].invalid && (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)"
+       />
+    <div *ngIf="formContact.controls['subject'].invalid && (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)"> 
+
+      <small class="error-message" *ngIf="formContact.controls['subject'].hasError('minlength')">You must enter at least 10 characters.</small>
+      <small class="error-message" *ngIf="formContact.controls['subject'].hasError('required')">Subject is a required field. </small>
+
+    </div>
+    <input 
+    type="tel" 
+    placeholder="(00) 00000-00000"
+    mask='(00) 0 0000-0000'
+    formControlName="phone"
+    [class.valid]="formContact.controls['phone'].valid"
+    [class.invalid]="formContact.controls['phone'].invalid && (formContact.controls['phone'].touched || formContact.controls['phone'].dirty)"
+     />
+  <div *ngIf="formContact.controls['phone'].invalid && (formContact.controls['phone'].touched || formContact.controls['phone'].dirty)"> 
+
+    <small class="error-message" *ngIf="formContact.controls['phone'].hasError('minlength')">You must enter at least 11 numbers.</small>
+    <small class="error-message" *ngIf="formContact.controls['phone'].hasError('required')">Phone number is a required field. </small>
+    <small class="error-message" *ngIf="formContact.controls['phone'].hasError('pattern')"> Only numbers are accepted.</small>
+
+  </div>
+    <input
+     type="email"
+     placeholder="E-mail"
+     formControlName="email"
+     [class.valid]="formContact.controls['email'].valid"
+     [class.invalid]="formContact.controls['email'].invalid && (formContact.controls['email'].touched || formContact.controls['email'].dirty)"
+      />
+   <div *ngIf="formContact.controls['email'].invalid && (formContact.controls['email'].touched || formContact.controls['email'].dirty)"> 
+ 
+     <small class="error-message" *ngIf="formContact.controls['email'].hasError('email')">You must enter a valid e-mail format.</small>
+     <small class="error-message" *ngIf="formContact.controls['email'].hasError('required')">Email is a required field. </small>   
+ 
+   </div>
+    <textarea
+     maxlength="300" 
+     placeholder="Enter Your Text"
+     formControlName="message"
+     [class.valid]="formContact.controls['message'].valid"
+     [class.invalid]="formContact.controls['message'].invalid && (formContact.controls['message'].touched || formContact.controls['message'].dirty)"
+     ></textarea>
+     <div *ngIf="formContact.controls['message'].invalid && (formContact.controls['message'].touched || formContact.controls['message'].dirty)"> 
+ 
+      <small class="error-message" *ngIf="formContact.controls['message'].hasError('minlength')">You must enter at least 20 characters.</small>
+      <small class="error-message" *ngIf="formContact.controls['message'].hasError('required')">Email is a required field. </small>   
+  
+    </div>
+    <button type="submit" [disabled]="formContact.invalid">Send</button>
+  </form>
+  <address>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126418.20556922734!2d-34.934217192078975!3d-8.043299337746987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab19764f13a37b%3A0x95ec38ddd387425f!2sMaior%20do%20Nordeste!5e0!3m2!1spt-BR!2sbr!4v1675297933536!5m2!1spt-BR!2sbr"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <p>Av Sport Club do Recife, S/N Estádio Adelmar da Costa Carvalho</p>
+  </address>
+</section>

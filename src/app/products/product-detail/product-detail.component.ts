@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IProduct } from 'src/app/database/produtos';
+import { CartService } from 'src/app/cart.service';
+import IProduct from 'src/app/interface/IProduct.interface';
+import ICart from 'src/app/interface/ICart.interface';
 import { NotificationService } from 'src/app/notification.service';
 import { ProductsService } from 'src/app/products.service';
 
@@ -15,21 +17,27 @@ export class ProductDetailComponent implements OnInit {
   public amount: number = 1;
 
   constructor(
-    private productsService: ProductsService,
-    private route: ActivatedRoute,
-    private notificationService: NotificationService,
+    private _productsService: ProductsService,
+    private _route: ActivatedRoute,
+    private _notificationService: NotificationService,
+    private _cartService: CartService
   ) {}
 
   ngOnInit(): void {
     //const routeParams = this.route.snapshot.paramMap; //other way
     //const productId = routeParams.get('id');
-    this.route.paramMap.subscribe(
+    this._route.paramMap.subscribe(
       (params) => (this.id = Number(params.get('id')))
     );
-    this.product = this.productsService.getOne(Number(this.id));
+    this.product = this._productsService.getOne(Number(this.id));
   }
 
-  public addToCart(){
-    this.notificationService.notificar("Product Added To Cart")
+  public addToCart() {
+    const productToCart: ICart = {
+      ...this.product!,
+      amount: this.amount,
+    };
+    this._cartService.addCart(productToCart);
+    this._notificationService.notificar('Product Added To Cart');
   }
 }

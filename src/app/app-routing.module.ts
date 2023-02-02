@@ -9,6 +9,8 @@ const routes: Routes = [
       import('./products/products.module').then((m) => m.ProductsModule),
   },
   { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
+  { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
 

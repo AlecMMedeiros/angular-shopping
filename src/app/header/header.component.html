@@ -9,15 +9,15 @@
         <a routerLink="/products">Products</a>
       </li>
       <li>
-        <a>
+        <a routerLink="/cart">
           <i class="fa-solid fa-cart-shopping"></i>
           Cart
-          <span class="badge-carrinho">0</span>
+          <span class="badge-carrinho">{{cartService.getCart().length}}</span>
         </a>
       </li>
     </ul>
     <ul>
-      <li><a>Contact</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
       <li>
         <a><i class="fa-brands fa-facebook-f"></i></a>
       </li>
@@ -32,8 +32,5 @@
       </li>
     </ul>
   </nav>
-  <form class="search-form">
-    <input type="text" placeholder="Search an item" />
-    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-  </form>
+  <app-search></app-search>
 </header>
