@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CartService } from '../cart.service';
 import ICart from '../interface/ICart.interface';
 import { NotificationService } from '../notification.service';
+import * as faSolid from "@fortawesome/free-solid-svg-icons"
 
 @Component({
   selector: 'app-cart',
@@ -10,8 +11,10 @@ import { NotificationService } from '../notification.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  public productsOnCart: ICart[] = [];
-  public total: number = 0;
+  productsOnCart: ICart[] = [];
+  total: number = 0;
+  faSolid = faSolid;
+
 
   constructor(
     public cartService: CartService,

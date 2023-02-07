@@ -10,7 +10,7 @@
         <input type="number" [(ngModel)]="productOnCart.amount"  (change)="getTotalPrice()" />
       </label>
       <button type="button" class="remove-button" (click)="removeProduct(productOnCart.id)">
-        <i class="fa-solid fa-xmark"></i>
+        <fa-icon [icon]="faSolid.faXmark"></fa-icon>
       </button>
     </li>
   </ul>

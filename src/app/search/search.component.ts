@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { faSearch} from "@fortawesome/free-solid-svg-icons"
 
 @Component({
   selector: 'app-search',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent {
   public description: string = '';
+  faSearch = faSearch
 
   constructor(private _route: Router) {}
 

@@ -5,16 +5,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MatSnackBarModule} from '@angular/material/snack-bar'
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+
 //Config to BRL
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 registerLocaleData(ptBr);
 // End of config
+
 
 @NgModule({
   declarations: [
@@ -22,16 +25,18 @@ registerLocaleData(ptBr);
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule,
+
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt' },], // Add provider
-  bootstrap: [AppComponent]
+  providers: [{ provide: LOCALE_ID, useValue: 'pt' }], // Add provider
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

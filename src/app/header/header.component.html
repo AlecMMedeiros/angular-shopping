@@ -10,7 +10,7 @@
       </li>
       <li>
         <a routerLink="/cart">
-          <i class="fa-solid fa-cart-shopping"></i>
+          <fa-icon [icon]="faCartShopping"></fa-icon>
           Cart
           <span class="badge-carrinho">{{cartService.getCart().length}}</span>
         </a>
@@ -19,16 +19,16 @@
     <ul>
       <li><a routerLink="/contact">Contact</a></li>
       <li>
-        <a><i class="fa-brands fa-facebook-f"></i></a>
+        <a><fa-icon [icon]="brands.faFacebookSquare"></fa-icon></a>
       </li>
       <li>
-        <a><i class="fa-brands fa-square-instagram"></i></a>
+        <a><fa-icon [icon]="brands.faInstagramSquare"></fa-icon></a>
       </li>
       <li>
-        <a><i class="fa-brands fa-square-twitter"></i></a>
+        <a><fa-icon [icon]="brands.faTwitterSquare"></fa-icon></a>
       </li>
       <li>
-        <a><i class="fa-brands fa-linkedin-in"></i></a>
+        <a><fa-icon [icon]="brands.faLinkedinIn"></fa-icon></a>
       </li>
     </ul>
   </nav>
